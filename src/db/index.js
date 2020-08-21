@@ -7,11 +7,6 @@ class Database {
         return connection;
     }
 
-    hello() {
-        console.log('hello')
-        return 'hello';
-    }
-
     getRepository(target) {
         return getManager().getRepository(target);
     }

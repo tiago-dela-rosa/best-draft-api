@@ -1,25 +1,25 @@
+import * as path from 'path';
+
 module.exports = {
-    api: {
-        port: process.env.DEV_PORT
+  api: {
+    port: process.env.DEV_PORT,
+  },
+  db: {
+    client: 'pg',
+    connection: {
+      database: process.env.DEV_DB_DATABASE,
+      entities: [path.resolve(__dirname, '../../domain/models/**/index.js')],
+      host: process.env.DEV_DB_HOST,
+      password: process.env.DEV_DB_SECRET,
+      port: process.env.DEV_DB_PORT,
+      type: 'postgres',
+      username: process.env.DEV_DB_USER,
     },
-    db: {
-        client: 'pg',
-        connection: {
-            type: 'postgres',
-            host: 'localhost',
-            port: '5432',
-            username: 'tiago',
-            password: 'tiago123',
-            database: 'bestdraft',
-            entitySchemas: [
-                require("../../db/entities/User.js")
-            ]
-        },
-        migrations: {
-            directory: './../../db/migrations'
-        },
-        seeds: {
-            directory: './../../db/seeds'
-        }
-    }
-}
+    migrations: {
+      directory: './../../db/migrations',
+    },
+    seeds: {
+      directory: './../../db/seeds',
+    },
+  },
+};

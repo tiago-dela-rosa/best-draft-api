@@ -3,32 +3,53 @@ import bodyParser from 'body-parser';
 import config from './config';
 import logger from './utils/logger';
 import Database from './db';
-import User from './db/entities/User'
-import routes from './routes';
-import { getConnection } from "typeorm";
+import routes from './routes/index';
+import errorHandling from './utils/errorHandling';
 
+class AppController {
+  constructor() {
+    this.express = express();
+    this.middlewares();
+    this.database();
+  }
 
-const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+  middlewares() {
+    this.express.use(bodyParser.json());
+    this.express.use(bodyParser.urlencoded({ extended: false }));
+    this.express.use((req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,PATCH');
+      res.header('Access-Control-Allow-Headers', '*');
+      next();
+    });
+  }
 
+  routes() {
+    return app.use('/api/v1', routes);
+  }
 
-Database.connect(config.db.connection).then((connection) => {
-  logger.info(`connected to the database`)
+  database() {
+    Database.connect(config.db.connection)
+      .then((connection) => {
+        logger.info('connected to the database');
 
-  const user = await getConnection()
-    .createQueryBuilder()
-    .select("name")
-    .from(User, "user")
-    .getOne();
+        app.use((req, res, next) => {
+          req.dbConnection = connection;
+          next();
+        });
 
-  console.log('plz', user);
+        this.routes();
 
-  app.use("/api/v1", routes);
-}).catch((error) => {
-  logger.error(`No database connected: ${error}`);
-});
+        app.use((error, req, res, next) => {
+          errorHandling(error, req, res, next);
+        });
+      })
+      .catch((error) => {
+        logger.error(`No database connected: ${error}`);
+      });
+  }
+}
 
-app.listen(config.api.port, () => {
-  logger.info(`aplication start listening on ${config.api.port}`);
-});
+const app = new AppController().express;
+
+export default app;
