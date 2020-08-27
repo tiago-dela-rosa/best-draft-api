@@ -18,6 +18,15 @@ class PreferencesController {
     return res.send(ret);
   }
 
+  async getByUser(req, res) {
+    logger.debug(`PreferenceController.getByUser using uid: ${req.params.uid}`);
+    const { uid } = req.params;
+    const preferenceService = new PreferenceService(req, res);
+    const ret = await preferenceService.getByUser(uid);
+
+    return res.send(ret);
+  }
+
   async update(req, res) {
     logger.debug(`PreferencesController.update using uid: ${req.params.uid}`);
     const preferenceService = new PreferenceService(req, res);

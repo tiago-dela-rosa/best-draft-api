@@ -48,4 +48,15 @@ export default class PreferenceRepository {
 
     return ret;
   }
+
+  async getByUser(uid) {
+    const ret = await this.connection
+      .createQueryBuilder()
+      .select('preference_uid as uid, config, created_at, updated_at')
+      .from(Preferences, 'preferences')
+      .where('created_by = :uid', { uid })
+      .execute();
+
+    return ret;
+  }
 }

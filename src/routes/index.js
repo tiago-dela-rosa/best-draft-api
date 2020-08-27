@@ -45,6 +45,7 @@ routes.patch('/teammate/:uid', celebrate(teammate.create), VerifyJWT, new Teamma
 
 // User preferences
 routes.get('/preference/:uid', VerifyJWT, new PreferencesController().getOne);
+routes.get('/preference/user/:uid', VerifyJWT, new PreferencesController().getByUser);
 routes.post('/preference', celebrate(userPreferences.create), VerifyJWT, new PreferencesController().create);
 routes.patch('/preference/:uid', celebrate(userPreferences.create), VerifyJWT, new PreferencesController().update);
 
