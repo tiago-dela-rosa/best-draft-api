@@ -21,6 +21,12 @@ class PreferenceService {
   async create() {
     logger.debug('PreferenceService.create');
     try {
+      const preferences = await this.getByUser(this.userId);
+
+      if (preferences.data.length >= 1) {
+        throw new Error('cant create more than one preference');
+      }
+
       const preferenceStructure = this.defaultData('smite');
 
       this.params.data.forEach((item) => {
@@ -44,6 +50,18 @@ class PreferenceService {
     try {
       if (!uid) throw Error({ error: 'Need send a valid uid' });
       const ret = await this.preferenceRepository.getOne(uid);
+      return { message: 'success', data: ret };
+    } catch (error) {
+      logger.error(error);
+      return { error };
+    }
+  }
+
+  async getByUser(uid) {
+    logger.debug('PreferenceService.getByUser');
+    try {
+      if (!uid) throw Error({ error: 'Need send a valid uid' });
+      const ret = await this.preferenceRepository.getByUser(uid);
       return { message: 'success', data: ret };
     } catch (error) {
       logger.error(error);
