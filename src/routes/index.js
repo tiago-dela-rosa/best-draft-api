@@ -30,18 +30,21 @@ routes.post('/tierlist', celebrate(tierlist.create), VerifyJWT, new TierlistCont
 routes.get('/tierlist/:uid', VerifyJWT, new TierlistController().getOne);
 routes.patch('/tierlist/:uid', celebrate(tierlist.create), VerifyJWT, new TierlistController().update);
 routes.get('/tierlist/user/:uid', VerifyJWT, new TierlistController().getUserTierlist);
+routes.get('/public/tierlist/', new TierlistController().getPublic);
 
 // Matchups
 routes.post('/matchup/', celebrate(matchup.create), VerifyJWT, new MatchupController().create);
 routes.get('/matchup/:uid', VerifyJWT, new MatchupController().getOne);
 routes.patch('/matchup/:uid', celebrate(matchup.create), VerifyJWT, new MatchupController().update);
 routes.get('/matchup/user/:uid', VerifyJWT, new MatchupController().getAllByUser);
+routes.get('/public/matchup/', new MatchupController().getPublic);
 
 // Teammates
 routes.post('/teammate/', celebrate(teammate.create), VerifyJWT, new TeammateController().create);
 routes.get('/teammate/:uid', VerifyJWT, new TeammateController().getOne);
 routes.get('/teammate/user/:uid', VerifyJWT, new TeammateController().getAllByUser);
 routes.patch('/teammate/:uid', celebrate(teammate.create), VerifyJWT, new TeammateController().update);
+routes.get('/public/teammate/', new TeammateController().getPublic);
 
 // User preferences
 routes.get('/preference/:uid', VerifyJWT, new PreferencesController().getOne);

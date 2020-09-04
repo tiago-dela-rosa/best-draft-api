@@ -18,6 +18,16 @@ class TeammateController {
     return res.send(teammateGetOne);
   }
 
+  async getPublic(req, res) {
+    logger.debug('TeammateController.getPublic');
+    const uid = 'b161afd9-7b65-439f-8af2-8761cd2495e7';
+    const teammateService = new TeammateService(req, res);
+    const teammateGetOne = await teammateService.getOne(uid);
+
+    return res.send(teammateGetOne);
+  }
+
+
   async getAllByUser(req, res) {
     logger.debug(`TeammateController.getAllByUser using uid: ${req.params.uid}`);
     const { uid } = req.params;
