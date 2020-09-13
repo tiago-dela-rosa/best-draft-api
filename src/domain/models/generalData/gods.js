@@ -1434,9 +1434,9 @@ export default {
     damageType: 'physical',
     slug: 'set',
     role: {
-      carry: 4,
+      carry: 3,
       support: 1,
-      mid: 1,
+      mid: 3,
       jungle: 5,
       solo: 4,
     },
@@ -1539,4 +1539,18 @@ export default {
       solo: 5,
     },
   },
+  111: {
+    id: 111,
+    name: 'Tsukuyomi',
+    class: 'assassin',
+    damageType: 'physical',
+    slug: 'tsukuyomi',
+    role: {
+      carry: 2,
+      support: 1,
+      mid: 1,
+      jungle: 5,
+      solo: 2,
+    },
+  },  
 };

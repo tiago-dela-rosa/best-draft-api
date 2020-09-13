@@ -662,6 +662,12 @@ const defaultPreference = {
         value: 3,
         slug: 'cthulhu',
       },
+      111: {
+        id: 111,
+        name: 'Tsukuyomi',
+        value: 3,
+        slug: 'tsukuyomi',
+      },      
     },
   },
   dota: {},
