@@ -4,7 +4,7 @@
    "description": "Tool to draft-pick",
    "main": "index.js",
    "scripts": {
-      "start": "set NODE_ENV=production&& --exec babel-node src/server",
+      "start": "set NODE_ENV=development&& --exec babel-node src/server",
       "start:dev": "set NODE_ENV=development&& nodemon --exec babel-node src/server",
       "lint": "eslint src",
       "lint:fix": "eslint --fix src",
