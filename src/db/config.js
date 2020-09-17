@@ -1,12 +1,13 @@
-const config = require('../config');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 module.exports = {
   client: 'pg',
   connection: {
-    host: config.db.connection.host,
-    user: config.db.connection.username,
-    password: config.db.connection.secret,
-    database: config.db.connection.database,
+    host: process.env.DEV_DB_HOST,
+    user: process.env.DEV_DB_USER,
+    password: process.env.DEV_DB_SECRET,
+    database: process.env.DEV_DB_DATABASE,
   },
   migrations: {
     directory: './migrations',
