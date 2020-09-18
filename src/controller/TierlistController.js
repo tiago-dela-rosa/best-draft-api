@@ -35,7 +35,7 @@ class TierlistController {
 
   async getPublic(req, res) {
     logger.info('TierlistController.getPublic');
-    const uid = 'e1b16694-805f-4919-a80d-a09b50afd81a';
+    const uid = '7a9d0a92-1803-473f-b54e-f95cc05b05b9';
     const tierlistService = new TierlistService(req, res);
     const tierlist = await tierlistService.getOne(uid);
 

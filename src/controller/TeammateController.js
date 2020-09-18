@@ -20,7 +20,7 @@ class TeammateController {
 
   async getPublic(req, res) {
     logger.debug('TeammateController.getPublic');
-    const uid = 'b161afd9-7b65-439f-8af2-8761cd2495e7';
+    const uid = '0a36d575-f650-4d5f-9ede-3207071f9ea6';
     const teammateService = new TeammateService(req, res);
     const teammateGetOne = await teammateService.getOne(uid);
 
