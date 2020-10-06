@@ -8,7 +8,7 @@ Steps to run this project:
 4. Start a rollback migration `npm run migrate:rollback`
 5. Seed `npm run seed` 
 
-Documentarion
+Documentation
 ```
-https://www.getpostman.com/collections/d341807976c662e776ea
+Coming soon
 ```
