@@ -21,7 +21,7 @@ class MatchupController {
 
   async getPublic(req, res) {
     logger.debug('MatchupController.getPublic');
-    const uid = '688301d8-d975-49dc-bb85-cbdee0ccf708';
+    const uid = process.env.PUBLIC_MATCHUP_ID || '78a9ee1d-6ce5-4a43-9a82-a190daccac4a';
     const matchupService = new MatchupService(req, res);
     const matchupGetOne = await matchupService.getOne(uid);
 
