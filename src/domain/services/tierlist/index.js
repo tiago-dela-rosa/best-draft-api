@@ -2,7 +2,7 @@ import _ from 'lodash';
 import defaultStructure from '../../models/tierlist/dataStructure';
 import TierlistRepository from '../../repository/tierlist';
 import logger from '../../../utils/logger';
-import tools from '../../../utils/tools';
+import utils from '../../../utils/utils';
 
 export default class TierlistService {
   constructor(req) {

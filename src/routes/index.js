@@ -7,6 +7,7 @@ import MatchupController from '../controller/MatchupController';
 import TeammateController from '../controller/TeammateController';
 import PreferencesController from '../controller/PreferencesController';
 import GeneralDataController from '../controller/GeneralDataController';
+import SmiteController from '../controller/SmiteController';
 import VerifyJWT from '../utils/jwtAuth';
 import {
   user, config, tierlist, matchup, teammate, userPreferences,
@@ -51,5 +52,9 @@ routes.get('/preference/:uid', VerifyJWT, new PreferencesController().getOne);
 routes.get('/preference/user/:uid', VerifyJWT, new PreferencesController().getByUser);
 routes.post('/preference', celebrate(userPreferences.create), VerifyJWT, new PreferencesController().create);
 routes.patch('/preference/:uid', celebrate(userPreferences.create), VerifyJWT, new PreferencesController().update);
+
+// Smite routes
+routes.post('/smite/createsession', new SmiteController().createSession);
+
 
 export default routes;
