@@ -10,7 +10,7 @@ export default {
       support: 1,
       mid: 5,
       jungle: 2,
-      solo: 2,
+      solo: 1,
     },
   },
   2: {
@@ -77,9 +77,9 @@ export default {
     slug: 'hades',
     role: {
       carry: 1,
-      support: 3,
+      support: 2,
       mid: 3,
-      jungle: 1,
+      jungle: 2,
       solo: 4,
     },
   },
@@ -92,9 +92,9 @@ export default {
     role: {
       carry: 3,
       support: 1,
-      mid: 4,
+      mid: 5,
       jungle: 4,
-      solo: 4,
+      solo: 3,
     },
   },
   8: {
@@ -146,7 +146,7 @@ export default {
     damageType: 'magical',
     slug: 'kukulkan',
     role: {
-      carry: 2,
+      carry: 1,
       support: 1,
       mid: 5,
       jungle: 1,
@@ -192,7 +192,7 @@ export default {
       support: 5,
       mid: 1,
       jungle: 1,
-      solo: 5,
+      solo: 4,
     },
   },
   15: {
@@ -202,7 +202,7 @@ export default {
     damageType: 'physical',
     slug: 'vamana',
     role: {
-      carry: 3,
+      carry: 2,
       support: 1,
       mid: 1,
       jungle: 3,
@@ -219,7 +219,7 @@ export default {
       carry: 1,
       support: 5,
       mid: 2,
-      jungle: 4,
+      jungle: 3,
       solo: 3,
     },
   },
@@ -258,11 +258,11 @@ export default {
     damageType: 'physical',
     slug: 'bakasura',
     role: {
-      carry: 3,
+      carry: 2,
       support: 1,
       mid: 1,
       jungle: 5,
-      solo: 5,
+      solo: 3,
     },
   },
   20: {
@@ -274,8 +274,8 @@ export default {
     role: {
       carry: 5,
       support: 2,
-      mid: 5,
-      jungle: 1,
+      mid: 4,
+      jungle: 2,
       solo: 1,
     },
   },
@@ -304,7 +304,7 @@ export default {
       support: 2,
       mid: 1,
       jungle: 5,
-      solo: 4,
+      solo: 3,
     },
   },
   23: {
@@ -317,7 +317,7 @@ export default {
       carry: 1,
       support: 5,
       mid: 1,
-      jungle: 3,
+      jungle: 2,
       solo: 3,
     },
   },
@@ -343,10 +343,10 @@ export default {
     slug: 'loki',
     role: {
       carry: 3,
-      support: 1,
+      support: 3,
       mid: 2,
-      jungle: 3,
-      solo: 5,
+      jungle: 5,
+      solo: 4,
     },
   },
   26: {
@@ -388,7 +388,7 @@ export default {
       support: 5,
       mid: 1,
       jungle: 3,
-      solo: 5,
+      solo: 4,
     },
   },
   29: {
@@ -416,7 +416,7 @@ export default {
       support: 1,
       mid: 5,
       jungle: 1,
-      solo: 4,
+      solo: 3,
     },
   },
   31: {
@@ -429,7 +429,7 @@ export default {
       carry: 3,
       support: 1,
       mid: 5,
-      jungle: 5,
+      jungle: 4,
       solo: 2,
     },
   },
@@ -469,7 +469,7 @@ export default {
     slug: 'ne-zha',
     role: {
       carry: 1,
-      support: 5,
+      support: 4,
       mid: 1,
       jungle: 5,
       solo: 3,
@@ -486,7 +486,7 @@ export default {
       support: 4,
       mid: 2,
       jungle: 5,
-      solo: 4,
+      solo: 3,
     },
   },
   36: {
@@ -528,7 +528,7 @@ export default {
       support: 1,
       mid: 5,
       jungle: 1,
-      solo: 4,
+      solo: 3,
     },
   },
   39: {
@@ -598,7 +598,7 @@ export default {
       support: 1,
       mid: 1,
       jungle: 5,
-      solo: 1,
+      solo: 2,
     },
   },
   44: {
@@ -626,7 +626,7 @@ export default {
       support: 1,
       mid: 5,
       jungle: 1,
-      solo: 3,
+      solo: 2,
     },
   },
   46: {
@@ -708,7 +708,7 @@ export default {
     role: {
       carry: 5,
       support: 1,
-      mid: 5,
+      mid: 4,
       jungle: 3,
       solo: 3,
     },
@@ -764,7 +764,7 @@ export default {
     role: {
       carry: 5,
       support: 1,
-      mid: 4,
+      mid: 3,
       jungle: 1,
       solo: 1,
     },
@@ -792,7 +792,7 @@ export default {
     role: {
       carry: 1,
       support: 5,
-      mid: 1,
+      mid: 2,
       jungle: 4,
       solo: 5,
     },
@@ -1434,9 +1434,9 @@ export default {
     damageType: 'physical',
     slug: 'set',
     role: {
-      carry: 3,
+      carry: 4,
       support: 1,
-      mid: 3,
+      mid: 4,
       jungle: 5,
       solo: 4,
     },
@@ -1552,5 +1552,5 @@ export default {
       jungle: 5,
       solo: 2,
     },
-  },  
+  },
 };
