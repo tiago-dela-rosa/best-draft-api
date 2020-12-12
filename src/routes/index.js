@@ -12,6 +12,7 @@ import VerifyJWT from '../utils/jwtAuth';
 import {
   user, config, tierlist, matchup, teammate, userPreferences,
 } from '../utils/validations';
+import smiteAuth from '../utils/smiteAuth'
 
 const routes = Router();
 
@@ -54,7 +55,10 @@ routes.post('/preference', celebrate(userPreferences.create), VerifyJWT, new Pre
 routes.patch('/preference/:uid', celebrate(userPreferences.create), VerifyJWT, new PreferencesController().update);
 
 // Smite routes
-routes.post('/smite/createsession', new SmiteController().createSession);
-
+routes.post('/smite/session', new SmiteController().createSession);
+routes.post('/smite/testsession', smiteAuth, new SmiteController().testSession);
+routes.get('/smite/getplayer', smiteAuth, new SmiteController().getPlayerByName);
+routes.get('/smite/getplayerstatus', smiteAuth, new SmiteController().getPlayerStatus)
+routes.get('/smite/getmatchplayerdetails', smiteAuth, new SmiteController().getMatchPlayerDetails);
 
 export default routes;
