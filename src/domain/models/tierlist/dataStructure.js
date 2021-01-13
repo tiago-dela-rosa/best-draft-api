@@ -668,6 +668,12 @@ const defaultTierList = {
         value: 3,
         slug: 'tsukuyomi',
       },
+      112: {
+        id: 112,
+        name: 'Danzaburou',
+        value: 3,
+        slug: 'danzaburou',
+      },      
     },
   },
   dota: {},

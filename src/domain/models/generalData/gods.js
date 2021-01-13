@@ -1553,4 +1553,18 @@ export default {
       solo: 2,
     },
   },
+  112: {
+    id: 112,
+    name: 'Danzaburou',
+    class: 'hunter',
+    damageType: 'physical',
+    slug: 'Danzaburou',
+    role: {
+      carry: 5,
+      support: 1,
+      mid: 3,
+      jungle: 3,
+      solo: 1,
+    },
+  },
 };
