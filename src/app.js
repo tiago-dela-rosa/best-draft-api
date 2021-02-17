@@ -25,7 +25,7 @@ class AppController {
   }
 
   routes() {
-    return app.use('/api/v1', routes);
+    return this.express.use('/api/v1', routes);
   }
 
   database() {
@@ -33,14 +33,14 @@ class AppController {
       .then((connection) => {
         logger.info('connected to the database');
 
-        app.use((req, res, next) => {
+        this.express.use((req, res, next) => {
           req.dbConnection = connection;
           next();
         });
 
         this.routes();
 
-        app.use((error, req, res, next) => {
+        this.express.use((error, req, res, next) => {
           errorHandling(error, req, res, next);
         });
       })
