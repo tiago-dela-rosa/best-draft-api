@@ -15,8 +15,9 @@ module.exports = {
       type: 'postgres',
       username: process.env.DEV_DB_USER,
       extra: {
-        ssl: true,
-        rejectUnauthorized: false,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       },
     },
     migrations: {
