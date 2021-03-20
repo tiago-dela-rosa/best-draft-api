@@ -14,6 +14,9 @@ module.exports = {
       port: process.env.DEV_DB_PORT,
       type: 'postgres',
       username: process.env.DEV_DB_USER,
+      extra: {
+        ssl: true,
+      },
     },
     migrations: {
       directory: './../../db/migrations',
