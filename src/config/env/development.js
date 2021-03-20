@@ -16,6 +16,7 @@ module.exports = {
       username: process.env.DEV_DB_USER,
       extra: {
         ssl: true,
+        rejectUnauthorized: false,
       },
     },
     migrations: {
